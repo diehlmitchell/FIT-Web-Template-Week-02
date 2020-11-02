@@ -37,16 +37,28 @@
     <button id="button2" onClick="inventory(document.getElementById('itemNumber').value)">Check inventory</button>
     <p id="return"></p>
 
+    <input id="INChange">
+    <button id="button3" onClick="invChange(document.getElementById('INChange').value)">Change inventory</button>
+    <p id="returnNewAmount">.</p>
 
 
     <script>
       var item = ["blackOps1", "AAPG", "MineCraft"];
       var amount = ["4", "3", "6"];
 
-      function inventory(input){
-      var itemNum = document.getElementById("itemNumber").value;
-      document.getElementById("return").innerHTML = "Your item is " + item[itemNum] + " with an item amount of " + amount[itemNum]
+      function inventory(itemNumber){
+        var itemNum = document.getElementById("itemNumber").value;
+        document.getElementById("return").innerHTML = "Your item is " + item[itemNum] + " with an item amount of " + amount[itemNum];
     }
+
+     function invChange(invChange,ItemNumber){
+        var newAmount = document.getElementById('INChange').value;
+        var itemNum = document.getElementById("itemNumber").value;
+        document.getElementById("returnNewAmount").innerHTML = "the new item amount is " + newAmount;
+        amount[itemNum] = newAmount;
+
+      }
+
 
     </script>
 
