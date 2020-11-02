@@ -151,11 +151,11 @@
     <p id ="lastName2" onclick = "prompt2()">click me me to prompt last name window</p>
     <hr>
     <button onclick="concat()">Click to concat</button>
-    <p id="endName"><p>
-    
+    <p id="endName"> .<p>
+
     <script>
 
-      function prompt1(){
+     function prompt1(){
       var firstName2 = window.prompt("Enter your first name: ");
      };
 
@@ -167,10 +167,10 @@
      document.getElementById("firstName2").innerHTML = firstName2;
      document.getElementById("lastName2").innerHTML = lastName2;
 
-    function concat(){
-      var concatName = firstName2.concat(" " + lastName2);
+      function concat(firstName1, lastName2){
+      var concatName = firstName1.concat(" " + lastName2);
       document.getElementById("endName").innerHTML = concatName;
-    };
+     };
 
 
 
@@ -189,7 +189,7 @@
       <input id="happyCustomerInput">
       <P id="customerQuoteDisplay"></P>
 
-      <button id="customerQuoteButton" onClick="makeQuote(document.getElementById('happyCustomerInput').value )">Save Quote</button>
+      <button id="customerQuoteButton" onClick="makeQuote(document.getElementById('happyCustomerInput').value)">Save Quote</button>
 
       <script>
       function makeQuote(input){
