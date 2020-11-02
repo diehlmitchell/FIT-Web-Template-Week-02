@@ -146,12 +146,14 @@
     <h1>Question #9:</h1>
     <h4>Create a function that accepts a first name and last name, concatenates the two with a space between them, and returns them. Use this function to print your name to a p tag.</h4>
     <!-- Place Answer Here -->
-    <p id ="firstName2" onclick = "prompt1()">click me to prompt first name window</p>
+    <input id="firstName2"></input>
+    <button onclick="prompt1(document.getElementById('firstName2').value">Click to register your first name</button>
     <hr>
-    <p id ="lastName2" onclick = "prompt2()">click me me to prompt last name window</p>
+    <input id ="lastName2"></input>
+    <button onclick="prompt2(document.getElementById('lastName2').value">Click to register your last name</button>
     <hr>
-    <button onclick="concat()">Click to concat</button>
-    <p id="endName"> .<p>
+    <button onclick="concat([document.getElementById('firstName2').value, document.getElementById('lastName2').value])">Click to concat</button>
+    <p id="endName"> <p>
 
     <script>
 
@@ -164,11 +166,11 @@
       
      };
 
-     document.getElementById("firstName2").innerHTML = firstName2;
-     document.getElementById("lastName2").innerHTML = lastName2;
+    //  document.getElementById("firstName2").innerHTML = firstName2;
+    //  document.getElementById("lastName2").innerHTML = lastName2;
 
-      function concat(firstName1, lastName2){
-      var concatName = firstName1.concat(" " + lastName2);
+      function concat(firstName1,lastName2){
+      var concatName = firstName1.concat(lastName2);
       document.getElementById("endName").innerHTML = concatName;
      };
 

@@ -46,7 +46,6 @@
       function inventory(input){
       var itemNum = document.getElementById("itemNumber").value;
       document.getElementById("return").innerHTML = "Your item is " + item[itemNum] + " with an item amount of " + amount[itemNum]
-    
     }
 
     </script>
