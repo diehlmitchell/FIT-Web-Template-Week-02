@@ -150,7 +150,9 @@
     <hr>
     <p id ="lastName2" onclick = "prompt2()">click me me to prompt last name window</p>
     <hr>
+    <button onclick="concat()">Click to concat</button>
     <p id="endName"><p>
+    
     <script>
 
       function prompt1(){
@@ -162,10 +164,16 @@
       
      };
 
-     var concatName = firstName2.concat(" " + lastName2);
      document.getElementById("firstName2").innerHTML = firstName2;
      document.getElementById("lastName2").innerHTML = lastName2;
-     document.getElementById("endName").innerHTML = concatName;
+
+    function concat(){
+      var concatName = firstName2.concat(" " + lastName2);
+      document.getElementById("endName").innerHTML = concatName;
+    };
+
+
+
     </script>
     <!-- Place Answer Here -->
   </div>
