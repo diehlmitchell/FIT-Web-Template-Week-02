@@ -58,8 +58,7 @@
         amount[itemNum] = newAmount;
 
       }
-
-
+      
     </script>
 
     <!-- Place Answer Here -->

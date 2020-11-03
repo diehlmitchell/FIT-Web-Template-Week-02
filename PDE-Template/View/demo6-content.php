@@ -13,9 +13,19 @@
       function functionOne(input)
       {
         //Place Answer Here
-        
+        if(input == "")
+        {
+          document.getElementById("outcomeOne").innerHTML = "Input was empty";       
+        }
+        else if(input.length > 10)
+        {
+          document.getElementById("outcomeOne").innerHTML = "Input was over 10";         
+        }
+        else
+        {
+          document.getElementById("outcomeOne").innerHTML = input;         
+        }
           
-
         //Place Answer Here
       }
     </script>
@@ -43,8 +53,27 @@
       function functionTwo(input)
       {
         //Place Answer Here
-        
-          
+        switch(input)
+        {
+          case "1":
+            document.getElementById("outcomeTwo").innerHTML="a small taste of the other side(of the building)";
+          break;
+          case "2":
+            document.getElementById("outcomeTwo").innerHTML="the sword of the training room";
+          break;
+          case "3":
+            document.getElementById("outcomeTwo").innerHTML="THE SACRED TECKTS";
+          break;
+          case "4":
+            document.getElementById("outcomeTwo").innerHTML="bag that can hold stuff";
+          break;
+          case "5":
+            document.getElementById("outcomeTwo").innerHTML="the still bleeding theiving hand of a gold stealing clash of clans goblin, does double damage on resource buildings when equiped.";
+          break;
+          default:
+            document.getElementById("outcomeTwo").innerHTML="WUH? THERE IS NUTHIN IN THAT POSITION";
+          break;
+        }
 
         //Place Answer Here
       }
@@ -62,14 +91,37 @@
     <button id="buttonThree" onclick="functionThree( document.getElementById('InputThree').value )">Enter</button>
     <input id="InputThree">
     
-    <p id="outcomeThree"></p>
+    <p id="outcomeThree"></p> 
+         
     <script>
       var gameFiles = ["zork", "super mario bros", "pac-man", "the legend of zelda", "tetris", "street fighter", "donkey kong"]
       function functionThree(input)
       {
         //Place Answer Here
-        
-          
+        var isFound = false;
+        var lowerInput = input.toLowerCase();
+        //convert to lowercase
+  
+
+        //to check each item in the array
+        for(x = 0; x < gameFiles.length; x++)
+        {
+          //check if this is the game
+            if(gameFiles[x] == lowerInput)
+            {
+              isFound=true;
+            }
+            
+          }
+        if(isFound)
+        {
+          document.getElementById("outcomeThree").innerHTML= "Match Found!";
+        }
+        else
+        {
+          document.getElementById("outcomeThree").innerHTML= "No Match";
+        }
+
 
         //Place Answer Here
       }
@@ -81,7 +133,8 @@
 <!-- Question 4 -->
   <div class='student-response'>
     <h1>Question #4:</h1>
-    <h4>Create a while loop that, on button click, increments a counter and displays each value while the total number of times looped is less than the number the user entered. 
+    <h4>Create a while loop that, on button click, increments a counter and displays each value while the total number of times looped is less 
+        than the number the user entered. 
         Display the total number of times the loop has run in the p tag on each button click as well.</h4>
 
     <button id="buttonFour" onclick="functionFour( document.getElementById('InputFour').value )">Enter</button>
