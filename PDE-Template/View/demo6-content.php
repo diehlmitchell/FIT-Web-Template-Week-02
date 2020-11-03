@@ -148,8 +148,19 @@
       function functionFour(input)
       {
         //Place Answer Here
+        
+        //while loop that runs each time button is clicked 
+        while(counter < input)
+        {
+          //increment our counter
+          ++counter;
 
+          //display each value
+          document.getElementById("outcomeFour").innerHTML = document.getElementById("outcomeFour").innerHTML + " " + counter
+        }
           
+        //display the number of times looped
+        document.getElementById("outcomeFour").innerHTML = document.getElementById("outcomeFour").innerHTML + "<br> The lup has ran " + counter + " times."
 
         //Place Answer Here
       }
@@ -170,8 +181,26 @@
       function functionFive(input)
       {
         //Place Answer Here
-        
-          
+         //declare variables to hold the total, the random, and display randoms'
+        var intTotal = 0;
+        var intRandom;
+        var strDisplay = "";
+
+        //do while to loo[ [ p]] through th ernadoms until we get the total
+
+        do
+        {
+          //get a random
+          intRandom = Math.floor(Math.random() * 10) +1;
+          //ensure that we dont go over
+          if(intTotal + intRandom <= input)
+          {
+            intTotal += intRandom;
+            strDisplay += ' ' + intRandom;
+          }
+
+        }while(intTotal < input) // continue to lop[[[[[[[p]]]]]]] uuntil equal
+         document.getElementById("outcomeFive").innerHTML = strDisplay;
 
         //Place Answer Here
       }
@@ -193,8 +222,24 @@
       function functionSix(input)
       {
         //Place Answer Here
-        
-          
+        //Need a try catch the errors in the process
+        try
+        {
+         //create and instantiate array from input
+         var splitArray = input.split(",");
+         //throw error if one occures
+         if(splitArray.length < 2) throw "The entered string did not contain a comma separators.";
+         //ensure that element 3 exists
+         if(splitArray.length < 3 || splitArray[2] =="") throw "No elemant exsists in position three.";
+         //since we made it throuhg validation , print elements
+          document.getElementById("outcomeSix").innerHTML = splitArray[2];
+        }
+        catch(message)
+        {
+          //print error
+          document.getElementById("outcomeSix").innerHTML = "poopy stinky";
+
+        }
 
         //Place Answer Here
       }
@@ -215,9 +260,18 @@
       function functionSeven(input)
       {
         //Place Answer Here
-
-          
-
+        
+        //CREATE STARTSHIP OBJECT
+        var starship = 
+        {
+          name: input,
+          speed: Math.random().toFixed(2) + "Light Years per Hour",
+          weaponsClass: "Level: " + (Math.floor(Math.random() * 10)+1)
+        }
+        document.getElementById("outcomeSeven").innerHTML =
+         "Name: " + starship.name + "<br/>" + 
+         "Speed: "+ starship.speed + "<br/>" + 
+         "weaponsClass: "+ starship.weaponsClass + "<br/>";
         //Place Answer Here
       }
     </script>
@@ -236,16 +290,44 @@
     <script>
 
       //Place Class Here (It's best to create classes outside the scope of functions to avoid creating a class with each click, rather than an object)
+        class Blaster
+        {
+          constructor(nameVal, soundVal, typeVal)
+          {
+            this.name = nameVal;
+            this.sound = soundVal;
+            this.type = typeVal;
+          }
         
-
-
+          fire()
+          {
+            document.getElementById("outcomeEight").innerHTML = this.sound + " a ball of "+ this.type + " blasts off into the distance";
+          }
+        }
       //Place Class Here
 
       function functionEight(input) 
       {
         //Place Answer Here
-        
-          
+        var weaponOne = new Blaster("flame cannon", "fshhhhhhh!", "fire");
+        var weaponTwo = new Blaster("plasma rifle", "pew!", "plasma");
+        var weaponThree = new Blaster("explosive launcher", "boom!", "explosives");
+
+        //switch to determine which weapon should be fired
+        switch(input.toLowerCase())
+        {
+          case weaponOne.name:
+            weaponOne.fire();
+            break;
+            case weaponTwo.name:
+              weaponTwo.fire();
+              break;
+            case weaponThree.name:
+              weaponThree.fire();
+              break;
+              default:
+              document.getElementById("outcomeEight").innerHTML = "No weapons found";
+        }
 
         //Place Answer Here
       }
