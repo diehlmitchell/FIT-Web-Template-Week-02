@@ -9,29 +9,38 @@
       <label for="inputOne">Number of sides (for a dice)</label>
       <br>
       <input id="inputOne">
-      <button id= "buttonOne" onclick="RollDice(document.getElementById('inputOne').value)">roll your dice</button>
 
-      <p id="OutputOne"><p>
+
+        <br>
+      <label for="inputTwo">Number of times you roll your dice</label>
+      <br>
+      <input id="inputTwo">
+      <button id="buttonOne" onclick="RollDice(document.getElementById('inputOne').value, document.getElementById('inputTwo').value)">roll your dice</button>
+      <p id="OutputOne">Out Put</p>
 
       <script>
-      class = dice
-      {
-        constructor(sidesVal)
-        {
-          this.sides = sidesVal;
-        }
-      }
-
-      sidesOutput()
-      {
-        document.getElementById("outcomeEight").innerHTML = "Your dice has this many sides:" + this.sides;
-      }
-
-      funtion RollDice(input)
-      {
+      // class = dice
+      // {
+      //   constructor(sidesVal)
+      //   {
+      //     this.sides = sidesVal;
+      //   }
         
-      }
+      //   sidesOutput()
+      //   {
+      //     document.getElementById("OutputOne").innerHTML = "Your dice has this many sides:" + this.sides;
+      //   }
+      // }
+      var randomNumber = 1;
 
+      function RollDice(inputOne, inputTwo)
+      {
+        randomNumber = Math.floor(Math.random() * inputOne)+1;
+        //placeholder for the actual output, this one just displays useful things before i actually get a proper output
+        document.getElementById("OutputOne").innerHTML = "You have this many sides:"+ inputOne + " Times rolled: " + inputTwo+" and a random number of " + randomNumber;
+
+      }
+      
 
       </script>
 

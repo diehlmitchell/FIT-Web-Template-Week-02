@@ -46,10 +46,11 @@
       var item = ["blackOps1", "AAPG", "MineCraft"];
       var amount = ["4", "3", "6"];
 
-      function inventory(itemNumber){
+      function inventory(itemNumber)
+      {
         var itemNum = document.getElementById("itemNumber").value;
         document.getElementById("return").innerHTML = "Your item is " + item[itemNum] + " with an item amount of " + amount[itemNum];
-    }
+      }
 
      function invChange(invChange,ItemNumber){
         var newAmount = document.getElementById('INChange').value;
