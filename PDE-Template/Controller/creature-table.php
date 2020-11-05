@@ -10,15 +10,16 @@
     <th>speed</th>
     <th>actions</th>
   </tr>
-    ";
-
-    for($index = 0; $index < count($creatureList);$index++)
+    "; //table headers made
+for($index3 = 0; $index3 < 100;$index3++) //loops the loop that loops other stuff :)
+{
+    for($index = 0; $index < count($creatureList);$index++) //$index < count($creatureList) loops if the index is lower than the number of elements in the array
     {
         echo"
             <tr>  
         ";
 
-        for($index2 = 0; $index2 < count($creatureList[0]) ; $index2++)
+        for($index2 = 0; $index2 < count($creatureList[0]) ; $index2++) //count($creatureList[0]) --- counts the length of the 1st array element, loops that many times
         {
             echo"
                 <td> 
@@ -31,7 +32,7 @@
         </tr>
         ";
     }
-
+}
 echo"
   </table>
   ";
