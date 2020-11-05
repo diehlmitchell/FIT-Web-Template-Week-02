@@ -24,12 +24,15 @@
           array("Aboleth", "10 (5,900 XP)", "17 (Natural Armor)", "135 (18d10 + 36)", "10 ft., swim 40 ft.", "Multiattack, Tentacle, Tail, Enslave (3/day), Legendary Action"),
           array("Beholder", "13 (10,000 XP)", "18 (natural armor)", "189 (19d10 + 76)", "0 ft., fly 20 ft. (hover)", "Bite, Eye Rays, Legendary Action"),
           array("Tarrasque", "30 (155,000 XP)", "25 (Natural Armor)", "676 (33d20 + 330)", "40 ft.", "Multiattack, Claw, Horns, Tail, Frightful Presence, Swallow, Legendary Action"),
-          //array("Three Kobolds in a Trenchcoat", "1 (200 XP)", "12", "15 (6d6 - 6)", "30 ft.", "Multiattack, Dagger, Sling")
+          array("Three Kobolds in a Trenchcoat", "1 (200 XP)", "12", "15 (6d6 - 6)", "30 ft.", "Multiattack, Dagger, Sling")
         );
       ?>
     <!-- /Given Material -->
 
     <!-- Place Answer Here -->
+    <?php
+        include './Controller/creature-table.php'
+    ?>
 
     
 
