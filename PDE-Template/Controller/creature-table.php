@@ -11,7 +11,7 @@
     <th>actions</th>
   </tr>
     "; //table headers made
-for($index3 = 0; $index3 < 1;$index3++) //loops the loop that loops other stuff :)
+for($index3 = 0; $index3 <1;$index3++) //loops the loop that loops other stuff :) NOTE THAT THIS IS "USELESS" DONT PAY ATTENTION TO IT
 {
     for($index = 0; $index < count($creatureList);$index++) //$index < count($creatureList) loops if the index is lower than the number of elements in the array
     {
@@ -19,7 +19,7 @@ for($index3 = 0; $index3 < 1;$index3++) //loops the loop that loops other stuff 
             <tr>  
         ";
 
-        for($index2 = 0; $index2 < count($creatureList[0]) ; $index2++) //count($creatureList[0]) --- counts the length of the 1st array element, loops that many times
+        for($index2 = 0; $index2 < count($creatureList[$index]) ; $index2++) //count($creatureList[$index]) --- counts the length of the array element, loops that many times
         {
             echo"
                 <td> 
