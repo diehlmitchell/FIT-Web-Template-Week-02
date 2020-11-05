@@ -10,38 +10,58 @@
       <br>
       <input id="inputOne">
 
-
         <br>
       <label for="inputTwo">Number of times you roll your dice</label>
       <br>
       <input id="inputTwo">
-      <button id="buttonOne" onclick="RollDice(document.getElementById('inputOne').value, document.getElementById('inputTwo').value)">roll your dice</button>
-      <p id="OutputOne">Out Put</p>
-
+      <button id="buttonOne" onclick="threeOutPuts(document.getElementById('inputOne').value, document.getElementById('inputTwo').value)">Roll your dice</button>
+      <p id="OutputOne">output</p>
       <script>
-      // class = dice
-      // {
-      //   constructor(sidesVal)
-      //   {
-      //     this.sides = sidesVal;
-      //   }
-        
-      //   sidesOutput()
-      //   {
-      //     document.getElementById("OutputOne").innerHTML = "Your dice has this many sides:" + this.sides;
-      //   }
-      // }
-      var randomNumber = 1;
-
-      function RollDice(inputOne, inputTwo)
+      
+     class Dice
       {
-        randomNumber = Math.floor(Math.random() * inputOne)+1;
-        //placeholder for the actual output, this one just displays useful things before i actually get a proper output
-        document.getElementById("OutputOne").innerHTML = "You have this many sides:"+ inputOne + " Times rolled: " + inputTwo+" and a random number of " + randomNumber;
+        constructor(sidesVal,rollsVal)
+        {
+          this.sides = sidesVal;
+          this.rolls = rollsVal;
+        }
+        
+        sidesOutput()
+        {
+          document.getElementById("OutputOne").innerHTML = "Your dice has this many sides: " + this.sides;
+        }
+
+        rollsOutput()
+        {
+          document.getElementById("OutputOne").innerHTML += "</br>number of your rolls m'lord " + this.rolls;
+        }
+
+        rollDice()
+        {
+         var timesRolled = this.rolls;
+         var strDisplay;
+         var intDisplayTotal = "";
+         var totalNums = 0;
+         for(var tr = 0; tr < timesRolled; tr++)
+          {
+            strDisplay = (Math.floor(Math.random() * this.sides)+1);
+            totalNums += strDisplay;
+            intDisplayTotal += strDisplay + ' ';    
+          }
+          return intDisplayTotal + " With a running total of: " + totalNums;
+        }
 
       }
-      
+      function threeOutPuts(inputOne,inputTwo)
+      {
+        var theDice = new Dice(inputOne,inputTwo);
+        theDice.sidesOutput();
+        theDice.rollsOutput();
+        var rollDiceOutput = theDice.rollDice();
+        document.getElementById("OutputOne").innerHTML += "</br>Your results are:" + rollDiceOutput;
 
+      } 
+    
       </script>
 
     <!-- Place Answer Here -->
@@ -54,7 +74,58 @@
     <h4>Copy Question 1, but add a 'cheaty' attribute that allows the user to also input how cheaty they wish their dice to be. 
       (be creative and useful, it'll earn you more points! :)</h4>
     <!-- Place Answer Here -->
+            <!-- <label for="inputOne">Number of sides (for a dice)</label>
+      <br>
+      <input id="inputOne">
+
+        <br>
+      <label for="inputTwo">Number of times you roll your dice</label>
+      <br>
+      <input id="inputTwo">
+      <button id="buttonOne" onclick="RollDice(document.getElementById('inputOne').value, document.getElementById('inputTwo').value)">roll your dice</button>
+      <p id="OutputOne">Out Put</p> -->
+
+      <script>
+      // class dice
+      // {
+      //   constructor(sidesVal)
+      //   {
+      //     this.sides = sidesVal;
+      //   }
+
+      //   sidesOutput()
+      //   {
+      //     document.getElementById("OutputOne").innerHTML = "Your dice has this many sides:" + this.sides;
+      //   }
+      // }
+      // function RollDice(inputOne, inputTwo)
+      // {
+      //  var sidesOfDie = new dice(inputOne);
+      //  sidesOfDie.sidesOutput();
+        
+      //  var timesRolled = inputTwo;
+      //  var strDisplay;
+      //  var intDisplayTotal = "";
+      //  var totalNums = 0;
+
+      //  // document.getElementById("OutputOne").innerHTML ="You have this many sides: "+ inputOne;
+      //   for(tr = 0; tr < timesRolled; tr++)
+      //   {
+       
+      //      strDisplay = (Math.floor(Math.random() * inputOne)+1);
+      //      totalNums += strDisplay;
+      //      intDisplayTotal += strDisplay + ' ';
+      //   }
+
+ 
+        
+
+      //   //intDisplayTotal = reduce(parseInt(intDisplayTotal));
+      //    document.getElementById("OutputOne").innerHTML = "Your results are:" + intDisplayTotal + " With a running total of: " + totalNums
+      // }
       
+
+      // </script>
 
 
     <!-- Place Answer Here -->
