@@ -237,7 +237,7 @@ p {
   }
 }
 
-@keyframes slideInFromLeft {
+@keyframes slideInFromLeft { 
   0% {
     -webkit-transform: translateX(-100%);
             transform: translateX(-100%);
@@ -247,8 +247,11 @@ p {
             transform: translateX(0);
   }
 }
-
-
+@media only screen and (max-width: 1530px){
+  .student-response img{
+    display: none;
+  }
+}
 
 
 //Question 1 Place Answer Here
